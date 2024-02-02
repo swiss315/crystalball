@@ -94,7 +94,7 @@ function Upload(props) {
                                                     htmlFor="utility"
                                                     className="bg-green-500 py-3 px-3 border-0 text-white rounded-l text-sm w-5/12 cursor-pointer"
                                                 >
-                                                    Choose Plan
+                                                    Upload Excel
                                                 </label>
                                                 <input
                                                     type="text"
