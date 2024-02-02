@@ -1,9 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 // import {User} from "iconsax-react";
-import Upload from "../Upload";
+// import Upload from "../Upload";
+import {useAuthContext} from "../../Hooks/context";
 
 function Navbar(props) {
-    let [showUpload, setShowUpload] = useState(false);
+    // let [showUpload, setShowUpload] = useState(false);
+    const { dispatch } = useAuthContext()
+    const uploadAction = () => {
+        dispatch({type : 'ACTIVE' ,  active: true})
+    }
     return(
         <div className='flex justify-between bg-white items-center px-10 p-3' style={{boxShadow: '0px 2px 4px 0px #0F223A1F'}}>
             <h1 className='font-bold'>
@@ -21,9 +26,8 @@ function Navbar(props) {
             {/*    </div>*/}
             {/*</div>*/}
             <div>
-                <button type='button' onClick={() => setShowUpload(true)} className='btn btn-primary rounded-lg text-white font-semibold bg-green-500 py-2 px-3'>Upload excel</button>
+                <button type='button' onClick={uploadAction} className='btn btn-primary rounded-lg text-white font-semibold bg-green-500 py-2 px-3'>Upload excel</button>
             </div>
-            <Upload isOpen={showUpload} onHide={() => setShowUpload(false)} />
         </div>
     )
 }

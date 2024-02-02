@@ -20,8 +20,8 @@ export const useUpload = () => {
                     'Content-Type': 'multipart/form-data'
                 }
             } ).then((response) => {
-            console.log(response);
-            localStorage.setItem('xhrReference', JSON.stringify(response));
+            console.log(response.data.data);
+            localStorage.setItem('xhrReference', response.data.data.chart_reference);
             setIsLoading(false)
 
         }).catch((err) => {

@@ -9,6 +9,7 @@ export const AuthContext = createContext("");
 export const initialState = {
     isAuth: !!cookies.get('xhrToken'),
     token: "",
+    active: false
   };
 
 export const authReducer = (state = initialState, action) => {
@@ -24,6 +25,11 @@ export const authReducer = (state = initialState, action) => {
           ...state,
           isAuth: false,
           token: "",
+        };
+      case 'ACTIVE':
+        return {
+            ...state,
+            active: action.active,
         };
       default:
         return state;

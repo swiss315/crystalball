@@ -3,7 +3,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import {ReactComponent as CancelIcon} from '../Assets/Icons/cancel.svg';
 // import {ReactComponent as Loader} from '../Assets/Icons/loader.svg';
-import {useUpload} from "../Hooks/upload";
+
 
 
 function Upload(props) {
@@ -13,12 +13,9 @@ function Upload(props) {
         company: '',
         file: '',
     })
-    const { upload } = useUpload()
-
-    const handleUpload = async (e) => {
-        e.preventDefault()
-        console.log(imageUpload)
-        await upload(data)
+    const handleUpload = (event) => {
+        props.onSubmit(data, event)
+        props.onHide()
     }
     // const handleIdUpload = (event) => {
     //     const file = event.target.files[0]; // Get the file

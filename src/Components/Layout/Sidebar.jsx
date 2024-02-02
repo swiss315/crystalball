@@ -7,12 +7,12 @@ function Sidebar() {
             <div className='flex justify-center py-4'>
                 <Logo />
             </div>
-            <div>
+            <div className='text-center'>
                 <h1 className='text-xl font-bold text-white'>
                     Dashboard
                 </h1>
             </div>
-            <div className=''>
+            <div className='text-center'>
                 <h1 className='text-lg text-red-500 font-bold'>
                     Log Out
                 </h1>
